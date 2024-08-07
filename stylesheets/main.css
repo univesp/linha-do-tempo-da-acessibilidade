@@ -1,3 +1,28 @@
 body {
-  background-color: #DFE6E8;
+  background-color: #f2f2f2;
+}
+
+.container{
+  display: flex;
+}
+.logo-acessibilidade{
+  margin-top: 300px
+}
+
+.título{
+  margin-top: 300px;
+  margin-left: 100px;
+}
+
+.background-verde{
+  margin-top: 200px;
+  background-color: #BDDBA0;
+  width: 100%;
+  height: 450px;
+}
+
+.background-amarelo{
+  background-color: #e8d6a3;
+  width: 100%;
+  height: 300px;
 }
