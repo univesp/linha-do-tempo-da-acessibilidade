@@ -44,7 +44,7 @@ footer .aval-rea .btn-secondary:focus {}
 /* MAIN */
 main {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  /*padding-bottom:3rem;*/
 }
 @media only screen and (max-width: 992px) {
   main {

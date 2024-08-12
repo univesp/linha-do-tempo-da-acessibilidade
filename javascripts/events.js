@@ -20,3 +20,18 @@ $(document).ready(function(){
   // Seu código abaixo
 
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+  const section = document.querySelector("section");
+  const line = document.querySelector(".line");
+
+  function ajustarLinha() {
+      const posicaoSection = section.getBoundingClientRect();
+      const alturaTotal = section.scrollHeight;
+      line.style.height = `${alturaTotal}px`;
+      line.style.top = `${posicaoSection.top + window.scrollY}px`;
+  }
+
+  ajustarLinha();
+  window.addEventListener("resize", ajustarLinha);
+});
