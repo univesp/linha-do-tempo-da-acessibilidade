@@ -160,3 +160,19 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.footer{
+  background-color: #2d4710;
+}
+
+nav .nav-link{
+  background-color: #112426;
+}
+
+nav .logo img{
+  background-color: #112426;
+}
+
+footer{
+  background-color: #bddba0;
+}
