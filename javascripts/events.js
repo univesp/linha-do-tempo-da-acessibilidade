@@ -63,9 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log(rect)
           if (rect.y <= window.innerHeight) {
             n += 1;
-            teste.innerHTML = (rect.y) + " : " + this.window.innerHeight;
-            console.log(rect.top)
-            console.log(rect.bottom)
             if(n % 2 == 0){
               section.children[n-1].children[1].classList.remove("paused");
               section.children[n-1].children[1].classList.remove("display-none");
