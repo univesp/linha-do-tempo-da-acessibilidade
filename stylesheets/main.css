@@ -8,8 +8,8 @@ body {
 .cabeçalho{
   justify-content: center;
   display: flex;
-  gap: 150px;
-  margin-top: 200px;
+  gap: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
 }
 
@@ -175,12 +175,32 @@ footer{
 }
 
 .paused {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 
+.display-none{
+  /* display: none; */
+}
+
+.animate__backInRight,
+.animate__backInLeft{
+  animation-delay: .2s;
+}
 
 body{
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
 }
