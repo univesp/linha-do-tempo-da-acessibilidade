@@ -1,0 +1,81 @@
+/* @media (max-width: 991px) { */
+@media (max-width: 1200px) {
+    .main{
+        padding: 0 !important;
+    }
+
+    .cabeçalho {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top:0;
+        margin-bottom: 0;
+    }
+
+    .logo-acessibilidade{
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-acessibilidade img{
+        width: 150px;
+        margin: 2rem 0;
+    }
+
+    .content-title .title-deficiência{
+        text-align: center;
+        font-size: 30pt;
+    }
+
+    .content-title .subtitle-deficiência{
+        text-align: center;
+        font-size: 13pt;
+    }
+
+    .line,
+    .circle-right{
+        left: 10%;
+    }
+
+    .circle-left{
+        right: 90%;
+    }
+
+    .white-left,
+    .white-right {
+        margin: 0 0 0 40px;
+        left: 0;
+    }
+
+    .white-left:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -10px;
+        margin-top: -25px;
+        background: #f2f2f2;
+        -webkit-transform: rotate(45deg);
+    }
+
+    .white-right:before,
+    .white-left:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -10px;
+        margin-top: -25px;
+        background: #f2f2f2;
+        -webkit-transform: rotate(45deg);
+    }
+
+    .white-left p,
+    .white-right p{
+        font-size: 12pt;
+    }
+
+
+}
+
