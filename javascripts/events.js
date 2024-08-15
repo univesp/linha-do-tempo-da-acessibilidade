@@ -49,11 +49,13 @@ document.addEventListener("DOMContentLoaded", function() {
       // section.children[index].children[1].classList.add("animate__backInRight");
       section.children[index].children[1].classList.add("animate__backInLeft");
       section.children[index].children[1].classList.add("paused"); 
+      section.children[index].children[1].classList.add("display-none"); 
     } else {
       section.children[index].children[1].classList.add("animate__animated");
       // section.children[index].children[1].classList.add("animate__backInLeft");
       section.children[index].children[1].classList.add("animate__backInRight");
       section.children[index].children[1].classList.add("paused"); 
+      section.children[index].children[1].classList.add("display-none"); 
     }
 
   }
@@ -64,10 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function() {
       // Verifica se o usuário rolou para baixo
       if (window.scrollY > 0) {
-          // Atualiza a página
-          // location.reload();
-          
-          // console.log(section.children[1].children[1].getBoundingClientRect());
           var rect = section.children[n].children[1].getBoundingClientRect();
           if ((rect.top+100) <= window.innerHeight) {
             console.log("deu certo" + n);
@@ -79,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
               console.log("impar");
               section.children[n-1].children[1].classList.remove("paused");
 
-              // section.children[n-1].children[1].classList.add("animate__animated");
-              // section.children[n-1].children[1].classList.add("animate__rubberBand");
             }
         }
 

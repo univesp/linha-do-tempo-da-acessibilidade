@@ -177,3 +177,10 @@ footer{
 .paused {
   animation-play-state: paused;
 }
+
+
+body{
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
