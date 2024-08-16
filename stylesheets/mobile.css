@@ -1,7 +1,22 @@
 /* @media (max-width: 991px) { */
+@media (min-width: 1200px){
+    .subtitle-deficiência {
+        font-size: 26pt;
+        border-bottom: 2px dashed;
+    }
+}
+
 @media (max-width: 1200px) {
     .main{
         padding: 0 !important;
+    }
+
+    .subtitle-deficiência {
+        width: 304px;
+        margin: 50px auto;
+        font-size: 11pt;
+        border-bottom: 2px dashed black;
+        text-align: center;
     }
 
     .cabeçalho {
@@ -26,11 +41,6 @@
     .content-title .title-deficiência{
         text-align: center;
         font-size: 30pt;
-    }
-
-    .content-title .subtitle-deficiência{
-        text-align: center;
-        font-size: 13pt;
     }
 
     .line,

@@ -9,8 +9,8 @@ body {
   justify-content: center;
   display: flex;
   gap: 50px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 200px;
 }
 
 .title-deficiência{
@@ -59,6 +59,7 @@ body {
   font-size: 16pt;
   margin-right: 700px;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
 }
 
 .white-left:before{
@@ -101,6 +102,7 @@ body {
   font-size: 16pt;
   margin-left: 700px;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
 }
 
 .white-right:before{
@@ -168,10 +170,16 @@ nav .nav-link{
 
 nav .logo img{
   background-color: #112426;
+  padding: 10px;
+}
+
+.material-icons {
+  color: aliceblue;
 }
 
 footer{
   background-color: #bddba0;
+  padding: 10rem 0;
 }
 
 .paused {
@@ -182,21 +190,48 @@ footer{
   /* display: none; */
 }
 
-.animate__backInRight,
+/* .animate__backInRight,
 .animate__backInLeft{
   animation-delay: .2s;
-}
+} */
 
-body{
+/* body{
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+} */
+
+.slideIn{
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.04,.59,.59,1.17);
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+}
+
+.slideOut{
+  animation-name: slideOut;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.04,.59,.59,1.17);
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
 }
 
 
 @keyframes slideIn {
   from {
-      transform: translateX(-100%);
+      transform: translateX(500px);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideOut{
+  from {
+      transform: translateX(-500px);
       opacity: 0;
   }
   to {
