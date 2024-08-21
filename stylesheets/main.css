@@ -6,11 +6,20 @@ body {
 }
 
 .cabeçalho{
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
-  margin-top: 150px;
-  margin-bottom: 200px;
+  /* margin-top: 150px;
+  margin-bottom: 200px; */
+  height: 90dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-acessibilidade img{
+  width: 200px;
+  height: 190px;
 }
 
 .title-deficiência{
@@ -18,7 +27,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-size: 40pt;
+  font-size: 33pt;
   z-index: 100;
 }
 
@@ -84,6 +93,7 @@ body {
   text-align: center;
   border: 5px solid #2d4710;
   white-space: nowrap;
+  padding: 0 20px;
 }
 
 .yellow{
@@ -127,6 +137,7 @@ body {
   text-align: center;
   border: 5px solid #2d4710;
   white-space: nowrap;
+  padding: 0 20px;
 }
 
 .marker{
@@ -217,6 +228,11 @@ footer{
   animation-fill-mode: forwards;
 }
 
+.content-main{
+  width: 100%;
+  overflow: hidden;
+}
+
 
 @keyframes slideIn {
   from {
@@ -238,4 +254,143 @@ footer{
       transform: translateX(0);
       opacity: 1;
   }
+}
+
+main{
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container{
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100000000;
+  background-color: #f2f2f2e9;
+}
+
+.ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border-bottom: 2px dashed black;
+  margin: 0;
+}
+
+.teste{
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 100px;
+  text-align: center;
+  letter-spacing: -3px;
+  line-height: 0.9;
+}
+
+.teste:hover{
+  background-color: #2d4710;
+  color: #f2f2f2;
+}
+
+.layout {
+  width: 80%;
+  background: #f2f2f200;
+  margin: 20px auto;
+  position: relative;
+  border-bottom: 2px dashed black;
+}
+#menu-slider-container {
+	width: 100%;
+	overflow: hidden;
+  position: relative;
+}
+#menu-slider {
+  list-style-type: none;
+	position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+.menu-slider-link {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+  border-radius: 50%;
+  background: #2d4710;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+	margin: 0 50px;
+  transform: translateY(40px);
+  position: relative;
+}
+
+#menu-slider-prev, #menu-slider-next {
+  position: absolute;
+  /* background: #ccc; */
+  padding: 10px;
+  top: 0px;
+  border-radius: 5px;
+  display: none;
+  cursor: pointer;
+}
+#menu-slider-prev {
+  left: -30px;
+}
+#menu-slider-next {
+  right: -30px;
+}
+
+
+#menu-slider li {
+	float: left;
+  position: relative;
+  height: 50px;
+}
+
+#menu-slider li:hover{
+  filter: brightness(2);
+}
+
+
+#menu-slider li::before{
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+#menu-slider li:nth-child(1)::before {
+  content: "3.500 a.C.";
+} 
+#menu-slider li:nth-child(2)::before{
+  content: "600 a.C.";
+} 
+#menu-slider li:nth-child(3)::before{
+  content: "530 a.C.";
+}
+#menu-slider li:nth-child(4)::before{
+  content: "529 a.C.";
+}
+#menu-slider li:nth-child(5)::before{
+  content: "360 a.C.";
+}
+#menu-slider li:nth-child(6)::before{
+  content: "343 a.C.";
+}
+#menu-slider li:nth-child(7)::before{
+  content: "16 a.C.";
+}
+#menu-slider li:nth-child(8)::before{
+  content: "330";
+  left: 45px;
+}
+#menu-slider li:nth-child(9)::before{
+  content: "354";
+  left: 45px;
+}
+#menu-slider li:nth-child(10)::before{
+  content: "600";
+  left: 45px;
+}
+#menu-slider li:nth-child(11)::before{
+  content: "1201";
+  left: 45px;
 }
