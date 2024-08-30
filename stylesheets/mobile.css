@@ -7,6 +7,15 @@
 }
 
 @media (max-width: 1200px) {
+
+    .nav-ul{
+        transform: translateX(-10px);
+    }
+    
+    .nav-ul a{
+        font-size: 8pt;
+    }
+
     .main{
         padding: 0 !important;
     }

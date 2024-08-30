@@ -15,118 +15,246 @@ $(document).ready(function(){
       }
     });
 
-  //////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
+  // 
+// Seu código abaixo
+});
 
-  // Seu código abaixo
-  $(function() {
-    var w=$(window);
-     var sliderContainer = $("#menu-slider-container");
-     var sliderUl = $("#menu-slider");
-     var sliderLi = sliderUl.children("li");
-     var sliderNext = $("#menu-slider-next");
-     var sliderPrev = $("#menu-slider-prev");
-    var sliderLiWidth = sliderLi.eq(0).width();
-     sliderUl.width(sliderLi.length * sliderLiWidth);
-     
-     if (sliderUl.width() > sliderContainer.width()) {
-       sliderNext.fadeIn();
-     }
-     
-    sliderNext.on("click", function() {
-         var x = parseInt(sliderUl.css("marginLeft"));
-         var ulWidth = sliderUl.width();
-        if (ulWidth + x >= sliderContainer.width()) {
-           x -= sliderLiWidth * 3;
-           if (ulWidth + x < sliderContainer.width()) { x = sliderContainer.width() - ulWidth - 10; }
-           sliderUl.stop().animate({ marginLeft: x }, 800);
-          sliderPrev.fadeIn();
-          console.log(parseInt(sliderUl.css("marginLeft"))*-1, ulWidth - sliderContainer.width());
-         }
-      if (parseInt(sliderUl.css("marginLeft"))*-1 >= ulWidth - sliderContainer.width()*2) {
-            sliderNext.fadeOut();
-          }
-       });
-        
-     sliderPrev.on("click", function() {
-         var x = parseInt(sliderUl.css("marginLeft"));
-         var ulWidth = sliderUl.width();
-        if (x <= 0) { 
-           x += sliderLiWidth * 3;
-           if (x > 0) { x = 0; }
-           sliderUl.stop().animate({ marginLeft: x }, 800);
-          sliderNext.fadeIn();
-          if (x == 0) {
-            sliderPrev.fadeOut();
-          }
-         }
-       });
-   });
+var n = 1;
 
-})
+// function Animacao(){
+//     for (let x = 1; x <= 191; x++) {
+//       if(section.children[n]){
+//         var rect = section.children[n].children[1].getBoundingClientRect();
+//         if (rect.y <= window.innerHeight) {
+//           n += 1;
+//           if(n % 2 == 0){
+//             section.children[n-1].children[1].classList.add("slideIn");
+//           } else {
+//             section.children[n-1].children[1].classList.add("slideOut");
+//           }
+//       }
+//       } else{
+//         console.log("não existe tambem '-'");
+//       }
 
-document.addEventListener("DOMContentLoaded", function() {
+//   }
+// }
+
+function ajustarLinha() {
   const section = document.querySelector("section");
   const line = document.querySelector(".line");
+  const posicaoSection = section.getBoundingClientRect();
+  const alturaTotal = section.scrollHeight;
+  line.style.height = `${alturaTotal}px`;
+  // line.style.top = `${posicaoSection.top + window.scrollY}px`;
 
-  function ajustarLinha() {
-      const posicaoSection = section.getBoundingClientRect();
-      const alturaTotal = section.scrollHeight;
-      line.style.height = `${alturaTotal}px`;
-      // line.style.top = `${posicaoSection.top + window.scrollY}px`;
-
-  }
-
-  var n = 1;
-  
-  for (let index = 1; index < section.children.length; index++) {
-    if(index % 2 == 0){
-      // section.children[index].children[1].classList.add("animate__animated");
-      // section.children[index].children[1].classList.add("animate__backInLeft");
-      // section.children[index].children[1].classList.add("paused"); 
-      // section.children[index].children[1].classList.add("display-none"); 
-    // } else {
-    //   section.children[index].children[1].classList.add("animate__animated");
-      // section.children[index].children[1].classList.add("animate__backInRight");
-      // section.children[index].children[1].classList.add("paused"); 
-      // section.children[index].children[1].classList.add("display-none"); 
-    }
-
-  }
-
-  function Animacao(){
-    for (let x = 1; x <= section.children.length; x++) {
-      var rect = section.children[n].children[1].getBoundingClientRect();
-      if (rect.y <= window.innerHeight) {
-        n += 1;
-        if(n % 2 == 0){
-          section.children[n-1].children[1].classList.add("slideIn");
-        } else {
-          section.children[n-1].children[1].classList.add("slideOut");
-        }
-    }
-  }
 }
 
-
-  ajustarLinha();
-  Animacao();
-    window.addEventListener("resize", ajustarLinha);
-
-    window.addEventListener('scroll', function() {
-      // Verifica se o usuário rolou para baixo
-      if (window.scrollY > 0) {
-          var rect = section.children[n].children[1].getBoundingClientRect();
-          if (rect.y <= window.innerHeight) {
-            n += 1;
-            if(n % 2 == 0){
-              section.children[n-1].children[1].classList.add("slideIn");
-            } else {
-              section.children[n-1].children[1].classList.add("slideOut");
-            }
-        }
-      }
+// window.addEventListener('scroll', Animacao);
+document.addEventListener("scroll", function() {
 
 
 
-  });
+  // 
+  // 
+
+
+  //   window.addEventListener('scroll', function() {
+  //     // Verifica se o usuário rolou para baixo
+  //     if (window.scrollY > 0) {
+  //       if(section.children[n]){
+  //         console.log("isso existe")
+  //         var rect = section.children[n].children[1].getBoundingClientRect();
+  //         if (rect.y <= window.innerHeight) {
+  //           n += 1;
+  //           if(n % 2 == 0){
+  //             section.children[n-1].children[1].classList.add("slideIn");
+  //           } else {
+  //             section.children[n-1].children[1].classList.add("slideOut");
+  //           }
+  //       }
+  //       } else {
+  //         console.log("não existe :/")
+  //       }
+
+  //     }
+  // });
+  // 
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
 });
+
+
+ // JSON 
+ fetch('data.json')
+ .then(response => response.json())
+ .then(data => {
+   obj = data; 
+   displayData(obj);
+ })
+ .catch(error => {
+   console.error('Erro ao carregar o JSON:', error);
+ });
+ // JSON 
+ 
+ function displayData(obj){
+   
+ 
+   const ContentMain = document.getElementsByClassName("content-main")[0];
+ 
+           function ateOndeEuVou(inicio, fim){
+            let quantasDivTem = document.querySelectorAll("article")
+            if(quantasDivTem.length == 0){
+ 
+           for(let x = inicio; x <= fim; x++){ console.log(x)
+                 const Article = createElements("article");
+                 Article.className = `${greenOrYellow(x)}`;
+                 // 
+                 const CircleLeft = createElements("div");
+                 CircleLeft.className = `circle-${leftOrRigth(x)}`;
+                 // 
+                 const DivLeft = createElements("div");
+                 DivLeft.className = `white-${leftOrRigth(x)} timeline-content js--fadeInLeft`;
+                 // 
+                 const AgeLeft = createElements("div");
+                 AgeLeft.className = `age-${leftOrRigth(x)}`;
+                 AgeLeft.innerText = obj.texto[x].titulo;
+                 // Adicionar elementos filhos ao Article
+                 Article.appendChild(CircleLeft);
+                 Article.appendChild(DivLeft);
+             for(let y = 0; y < obj.texto[x].paragrafo.length; y++){
+               const DivMarker = createElements("div");
+               DivMarker.classList = "marker";
+               DivMarker.innerText = "⧫";
+               const Paragrafo = createElements("p");
+               Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+               // Adicionar elementos filhos ao DivLeft
+               DivLeft.appendChild(AgeLeft);
+               DivLeft.appendChild(DivMarker);
+               DivLeft.appendChild(Paragrafo);
+             }
+             
+           ContentMain.appendChild(Article);
+           }
+ 
+           function leftOrRigth(x){
+             if(x%2==0){
+               return "left";
+             } else {
+               return"right";
+             }
+           }
+           function greenOrYellow(x){
+             if(x%2==0){
+               return "green";
+             } else {
+               return "yellow";
+             }
+           }
+           function createElements(tagName){
+             return document.createElement(tagName);
+           }
+          }
+         }
+ 
+         let liGeral = document.querySelectorAll(".nav-li");
+ 
+         liGeral[0].addEventListener("click", function(){
+          removeArticle();
+          ateOndeEuVou(0,38);
+          ajustarLinha();
+          // Animacao();
+        });
+        
+        liGeral[1].addEventListener("click", function(){
+          removeArticle();
+          ateOndeEuVou(39,77);
+          ajustarLinha();
+          // Animacao();
+        });        
+        liGeral[2].addEventListener("click", function(){
+          removeArticle();
+          ateOndeEuVou(78,116);
+          ajustarLinha();
+          // Animacao();
+        });        
+        liGeral[3].addEventListener("click", function(){
+          removeArticle();
+          ateOndeEuVou(117,155);
+          ajustarLinha();
+          // Animacao();
+        });        
+        liGeral[4].addEventListener("click", function(){
+          removeArticle();
+          ateOndeEuVou(156,190);
+          ajustarLinha();
+          // Animacao();
+        });
+
+        function removeArticle(){
+          let quantasDivTem = document.querySelectorAll("article");
+
+
+          if(quantasDivTem.length > 0){
+            quantasDivTem.forEach(element => {
+              element.remove();
+            })
+          }
+        }
+
+
+         
+ 
+ }
+
+ajustarLinha();
+
+window.addEventListener("resize", ajustarLinha);
+                            
+
+
+    // Criar um novo elemento de estilo
+    const style = document.createElement('style');
+    document.head.appendChild(style);
+
+    // Obter a folha de estilo do novo elemento
+    const styleSheet = style.sheet;
+    // 
+    // 
+    // 
+    // 
+    const section = document.querySelector("section");
+    // 
+    // 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        // 
+        // Obter o elemento alvo
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        // 
+        // Verificar se o elemento alvo existe
+        if (targetElement) {
+          // Calcular a posição desejada para centralizar o topo do elemento na tela
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = targetPosition - 92;
+          // Rolagem suave até a posição onde o topo do elemento fica centralizado
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    // 
+   // ===============================================================
+  // 
+
+
+
+

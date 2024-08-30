@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f2f2f2;
   font-family: "Lexend", sans-serif;
@@ -68,7 +72,6 @@ body {
   font-size: 16pt;
   margin-right: 700px;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
-  opacity: 0;
 }
 
 .white-left:before{
@@ -112,7 +115,6 @@ body {
   font-size: 16pt;
   margin-left: 700px;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
-  opacity: 0;
 }
 
 .white-right:before{
@@ -261,136 +263,54 @@ main{
   padding: 0;
 }
 
-.nav-container{
-  padding: 0;
+
+
+
+.nav-nav{
+  width: 95dvw;
+  margin: auto;
   position: sticky;
   top: 0;
-  z-index: 100000000;
-  background-color: #f2f2f2e9;
+  left: 0;
+  z-index: 100000;
 }
 
-.ul{
+.nav-content{
+  /* border:1px solid red; */
+}
+
+.nav-ul{
   display: flex;
-  justify-content: center;
-  align-items: center;
   list-style: none;
-  border-bottom: 2px dashed black;
-  margin: 0;
+  width: 100%;
+  /* border: 1px solid red; */
+  margin: auto;
 }
 
-.teste{
-  padding: 10px;
-  font-size: 1.5rem;
-  width: 100px;
+.nav-ul a{
+  width: 19%;
   text-align: center;
-  letter-spacing: -3px;
-  line-height: 0.9;
-}
-
-.teste:hover{
-  background-color: #2d4710;
+  font-size: 10pt;
+  text-decoration: none;
   color: #f2f2f2;
 }
 
-.layout {
-  width: 80%;
-  background: #f2f2f200;
-  margin: 20px auto;
-  position: relative;
-  border-bottom: 2px dashed black;
-}
-#menu-slider-container {
-	width: 100%;
-	overflow: hidden;
-  position: relative;
-}
-#menu-slider {
-  list-style-type: none;
-	position: relative;
-  margin: 0px;
-  padding: 0px;
-}
-.menu-slider-link {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-  border-radius: 50%;
-  background: #2d4710;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-	margin: 0 50px;
-  transform: translateY(40px);
-  position: relative;
+
+.nav-li{
+  min-width: 19%;
+  height: 60px;
+  margin-right: 1%;
+  background-color: #2d4710;
+  padding:  5px 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#menu-slider-prev, #menu-slider-next {
-  position: absolute;
-  /* background: #ccc; */
-  padding: 10px;
-  top: 0px;
-  border-radius: 5px;
-  display: none;
-  cursor: pointer;
-}
-#menu-slider-prev {
-  left: -30px;
-}
-#menu-slider-next {
-  right: -30px;
+.content-main{
+  border-top: 2px dashed black;
 }
 
 
-#menu-slider li {
-	float: left;
-  position: relative;
-  height: 50px;
-}
 
-#menu-slider li:hover{
-  filter: brightness(2);
-}
-
-
-#menu-slider li::before{
-  position: absolute;
-  top: 10px;
-  left: 30px;
-}
-#menu-slider li:nth-child(1)::before {
-  content: "3.500 a.C.";
-} 
-#menu-slider li:nth-child(2)::before{
-  content: "600 a.C.";
-} 
-#menu-slider li:nth-child(3)::before{
-  content: "530 a.C.";
-}
-#menu-slider li:nth-child(4)::before{
-  content: "529 a.C.";
-}
-#menu-slider li:nth-child(5)::before{
-  content: "360 a.C.";
-}
-#menu-slider li:nth-child(6)::before{
-  content: "343 a.C.";
-}
-#menu-slider li:nth-child(7)::before{
-  content: "16 a.C.";
-}
-#menu-slider li:nth-child(8)::before{
-  content: "330";
-  left: 45px;
-}
-#menu-slider li:nth-child(9)::before{
-  content: "354";
-  left: 45px;
-}
-#menu-slider li:nth-child(10)::before{
-  content: "600";
-  left: 45px;
-}
-#menu-slider li:nth-child(11)::before{
-  content: "1201";
-  left: 45px;
-}
