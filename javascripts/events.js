@@ -110,7 +110,7 @@ document.addEventListener("scroll", function() {
             let quantasDivTem = document.querySelectorAll("article")
             if(quantasDivTem.length == 0){
  
-           for(let x = inicio; x <= fim; x++){ console.log(x)
+           for(let x = inicio; x <= fim; x++){
                  const Article = createElements("article");
                  Article.className = `${greenOrYellow(x)}`;
                  // 
@@ -118,7 +118,7 @@ document.addEventListener("scroll", function() {
                  CircleLeft.className = `circle-${leftOrRigth(x)}`;
                  // 
                  const DivLeft = createElements("div");
-                 DivLeft.className = `white-${leftOrRigth(x)} timeline-content js--fadeInLeft`;
+                 DivLeft.className = `white-${leftOrRigth(x)} timeline-content`;
                  // 
                  const AgeLeft = createElements("div");
                  AgeLeft.className = `age-${leftOrRigth(x)}`;
@@ -162,48 +162,151 @@ document.addEventListener("scroll", function() {
          }
  
          let liGeral = document.querySelectorAll(".nav-li");
+
+         ateOndeEuVou(0,38);
+         ajustarLinha();
+         Anima();
  
          liGeral[0].addEventListener("click", function(){
           removeArticle();
           ateOndeEuVou(0,38);
           ajustarLinha();
-          // Animacao();
-        });
+          AddActive(0);
+
+          if(window.scrollY < 1200){
+            Anima();
+          } else if(window.scrollY < 3000) {
+            setTimeout(() => {
+              Anima();
+            }, 500);
+          } else {
+            setTimeout(() => {
+              Anima();
+            }, 700);
+          }
+
+          });
+        // });
         
         liGeral[1].addEventListener("click", function(){
           removeArticle();
           ateOndeEuVou(39,77);
           ajustarLinha();
-          // Animacao();
+          AddActive(1);
+
+          if(window.scrollY < 1200){
+            Anima();
+          } else if(window.scrollY < 3000) {
+            setTimeout(() => {
+              Anima();
+            }, 500);
+          } else {
+            setTimeout(() => {
+              Anima();
+            }, 700);
+          }
+
         });        
         liGeral[2].addEventListener("click", function(){
           removeArticle();
           ateOndeEuVou(78,116);
           ajustarLinha();
-          // Animacao();
+          AddActive(2);
+
+          if(window.scrollY < 1200){
+            Anima();
+          } else if(window.scrollY < 3000) {
+            setTimeout(() => {
+              Anima();
+            }, 500);
+          } else {
+            setTimeout(() => {
+              Anima();
+            }, 700);
+          }
+
         });        
         liGeral[3].addEventListener("click", function(){
           removeArticle();
           ateOndeEuVou(117,155);
           ajustarLinha();
-          // Animacao();
+          AddActive(3);
+
+          if(window.scrollY < 1800){
+            Anima();
+          } else if(window.scrollY < 3000) {
+            setTimeout(() => {
+              Anima();
+            }, 500);
+          } else {
+            setTimeout(() => {
+              Anima();
+            }, 700);
+          }
+
         });        
         liGeral[4].addEventListener("click", function(){
           removeArticle();
           ateOndeEuVou(156,190);
           ajustarLinha();
-          // Animacao();
+          AddActive(4);
+
+          if(window.scrollY > 1200){
+            setTimeout(() => {
+              Anima();
+            }, 500);
+          } else if(window.scrollY > 3000) {
+            setTimeout(() => {
+              Anima();
+            }, 700);
+          } else {
+            Anima();
+          }
+
         });
 
         function removeArticle(){
           let quantasDivTem = document.querySelectorAll("article");
-
 
           if(quantasDivTem.length > 0){
             quantasDivTem.forEach(element => {
               element.remove();
             })
           }
+        }
+
+        function AddActive(x){
+          liGeral.forEach(element =>{
+            element.classList.remove("active");
+          })
+          liGeral[x].classList.add("active");
+        }
+
+        function Anima(){
+            const elements = document.querySelectorAll('.timeline-content');
+            let n = 0;
+      
+            // Crie um observador de interseção
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  // Adiciona a classe de animação quando o elemento está visível
+                  if(n%2==0){
+                  entry.target.classList.add('slideOut');
+                } else {
+                  entry.target.classList.add('slideIn');
+                }
+                  n++;
+                }
+              });
+            }, {
+              threshold: 0.1  // Define o percentual do elemento visível para acionar a animação
+            });
+      
+            // Comece a observar todos os elementos selecionados
+            elements.forEach(element => {
+              observer.observe(element);
+            });
         }
 
 
