@@ -267,7 +267,8 @@ document.addEventListener("scroll", function() {
         }
 
         function velocidadeAnima(){
-          if(window.scrollY > 1200){
+          let x = window.scrollY
+          if(x > 1200 && x < 2900){
             setTimeout(() => {
               console.log("500")
               Anima();

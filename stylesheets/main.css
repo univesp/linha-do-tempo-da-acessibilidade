@@ -69,7 +69,7 @@ p{
 
 .white-left{
   background: #f2f2f2;
-  padding: 40px;
+  padding: 50px 40px 40px 40px;
   position: relative;
   width: 500px;
   height: fit-content;
@@ -102,6 +102,7 @@ p{
   border: 5px solid #2d4710;
   white-space: nowrap;
   padding: 0 20px;
+  font-size: 15px;
 }
 
 .yellow{
@@ -113,7 +114,7 @@ p{
 
 .white-right{
   background: #f2f2f2;
-  padding: 40px;
+  padding: 50px 40px 40px 40px;
   position: relative;
   width: 500px;
   height: fit-content;
@@ -146,11 +147,13 @@ p{
   border: 5px solid #2d4710;
   white-space: nowrap;
   padding: 0 20px;
+  font-size: 15px;
 }
 
 .marker{
   position: absolute;
   margin-left: -20px;
+  font-size: 17px;
 }
 
 .circle-left{
@@ -222,7 +225,7 @@ footer{
 
 .slideIn{
   animation-name: slideIn;
-  animation-duration: 1s;
+  animation-duration: .6s;
   animation-timing-function: cubic-bezier(0, 0.39, 0.59, 1.5);
   animation-delay: .1s;
   animation-fill-mode: forwards;
@@ -230,7 +233,7 @@ footer{
 
 .slideOut{
   animation-name: slideOut;
-  animation-duration: 1s;
+  animation-duration: .6s;
   animation-timing-function: cubic-bezier(0, 0.39, 0.59, 1.5);
   animation-delay: .1s;
   animation-fill-mode: forwards;
