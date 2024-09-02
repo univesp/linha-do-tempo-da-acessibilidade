@@ -192,7 +192,9 @@ nav .nav-link{
 
 nav .logo img{
   background-color: #112426;
-  padding: 10px;
+  padding: 15px;
+  width: 150px;
+  height: 75px;
 }
 
 .material-icons {
@@ -225,7 +227,7 @@ footer{
 
 .slideIn{
   animation-name: slideIn;
-  animation-duration: .6s;
+  animation-duration: .85s;
   animation-timing-function: cubic-bezier(0, 0.39, 0.59, 1.5);
   animation-delay: .1s;
   animation-fill-mode: forwards;
@@ -233,7 +235,7 @@ footer{
 
 .slideOut{
   animation-name: slideOut;
-  animation-duration: .6s;
+  animation-duration: .85s;
   animation-timing-function: cubic-bezier(0, 0.39, 0.59, 1.5);
   animation-delay: .1s;
   animation-fill-mode: forwards;
