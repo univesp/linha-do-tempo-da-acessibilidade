@@ -222,7 +222,7 @@ footer{
 
 .slideIn{
   animation-name: slideIn;
-  animation-duration: 10s;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.39, 0.59, 1.5);
   animation-delay: .1s;
   animation-fill-mode: forwards;
