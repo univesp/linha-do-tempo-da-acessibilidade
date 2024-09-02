@@ -193,18 +193,7 @@ document.addEventListener("scroll", function() {
           ateOndeEuVou(39,77);
           ajustarLinha();
           AddActive(1);
-
-          if(window.scrollY < 1200){
-            Anima();
-          } else if(window.scrollY < 3000) {
-            setTimeout(() => {
-              Anima();
-            }, 500);
-          } else {
-            setTimeout(() => {
-              Anima();
-            }, 700);
-          }
+          velocidadeAnima();
 
         });        
         liGeral[2].addEventListener("click", function(){
@@ -212,18 +201,7 @@ document.addEventListener("scroll", function() {
           ateOndeEuVou(78,116);
           ajustarLinha();
           AddActive(2);
-
-          if(window.scrollY < 1200){
-            Anima();
-          } else if(window.scrollY < 3000) {
-            setTimeout(() => {
-              Anima();
-            }, 500);
-          } else {
-            setTimeout(() => {
-              Anima();
-            }, 700);
-          }
+          velocidadeAnima();
 
         });        
         liGeral[3].addEventListener("click", function(){
@@ -231,18 +209,7 @@ document.addEventListener("scroll", function() {
           ateOndeEuVou(117,155);
           ajustarLinha();
           AddActive(3);
-
-          if(window.scrollY < 1800){
-            Anima();
-          } else if(window.scrollY < 3000) {
-            setTimeout(() => {
-              Anima();
-            }, 500);
-          } else {
-            setTimeout(() => {
-              Anima();
-            }, 700);
-          }
+          velocidadeAnima();
 
         });        
         liGeral[4].addEventListener("click", function(){
@@ -250,18 +217,8 @@ document.addEventListener("scroll", function() {
           ateOndeEuVou(156,190);
           ajustarLinha();
           AddActive(4);
+          velocidadeAnima();
 
-          if(window.scrollY > 1200){
-            setTimeout(() => {
-              Anima();
-            }, 500);
-          } else if(window.scrollY > 3000) {
-            setTimeout(() => {
-              Anima();
-            }, 700);
-          } else {
-            Anima();
-          }
 
         });
 
@@ -307,6 +264,28 @@ document.addEventListener("scroll", function() {
             elements.forEach(element => {
               observer.observe(element);
             });
+        }
+
+        function velocidadeAnima(){
+          if(window.scrollY > 1200){
+            setTimeout(() => {
+              console.log("500")
+              Anima();
+            }, 500);
+          } else if(window.scrollY > 3000) {
+            setTimeout(() => {
+              console.log("700")
+              Anima();
+            }, 700);
+          } else if(window.scrollY > 15000) {
+            setTimeout(() => {
+              console.log("1000000000")
+              Anima();
+            }, 10000000);
+          } else {
+            console.log("se foi")
+            Anima();
+          }
         }
 
 

@@ -17,7 +17,7 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 45px;
   /* margin-top: 150px;
   margin-bottom: 200px; */
   height: 93dvh;
@@ -35,12 +35,12 @@ p{
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-size: 33pt;
+  font-size: 30pt;
   z-index: 100;
 }
 
 .subtitle-deficiência{
-  margin-top: 50px;
+  margin-top: 12px;
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
