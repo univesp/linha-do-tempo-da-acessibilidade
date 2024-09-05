@@ -201,6 +201,7 @@ nav .logo img{
 
 footer{
   background-color: #bddba0;
+  background: linear-gradient(to left, #b1ce96 0%, #bddba0 20%, #c7e7a8 50%, #bddba0 80%, #b1ce96 100%);
   padding: 10rem 0;
 }
 
