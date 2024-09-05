@@ -120,9 +120,13 @@ document.addEventListener("scroll", function() {
                  const DivLeft = createElements("div");
                  DivLeft.className = `white-${leftOrRigth(x)} timeline-content`;
                  // 
+                DivLeft.setAttribute('data-id', x);
+                 //
                  const AgeLeft = createElements("div");
                  AgeLeft.className = `age-${leftOrRigth(x)}`;
                  AgeLeft.innerText = obj.texto[x].titulo;
+                 //
+                 const linkElement = document.createElement('a');
                  // Adicionar elementos filhos ao Article
                  Article.appendChild(CircleLeft);
                  Article.appendChild(DivLeft);
@@ -131,11 +135,28 @@ document.addEventListener("scroll", function() {
                DivMarker.classList = "marker";
                DivMarker.innerText = "⧫";
                const Paragrafo = createElements("p");
-               Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+if(x == 189){
+  console.log("bazzzzinga")
+  Paragrafo.innerHTML = `Objetivos do Desenvolvimento Sustentável (<b><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a></b>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`;
+  console.log(`Objetivos do Desenvolvimento Sustentável (<a href="https://brasil.un.org/pt-br/sdgs" target="__blank>https://brasil.un.org/pt-br/sdgs</a>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`)
+  
+} else{
+  Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+}
+ 
                // Adicionar elementos filhos ao DivLeft
                DivLeft.appendChild(AgeLeft);
                DivLeft.appendChild(DivMarker);
-               DivLeft.appendChild(Paragrafo);
+               DivLeft.appendChild(Paragrafo);               
+             
+              if(obj.texto[x].link){
+                linkElement.href = obj.texto[x].link;
+                linkElement.classList.add("link-font");
+                linkElement.textContent = `(Fonte: ${obj.texto[x].link})`;
+                linkElement.target = "__blank";
+                DivLeft.appendChild(linkElement);
+              }
+
              }
              
            ContentMain.appendChild(Article);
@@ -163,34 +184,23 @@ document.addEventListener("scroll", function() {
  
          let liGeral = document.querySelectorAll(".nav-li");
 
-         ateOndeEuVou(0,38);
+         ateOndeEuVou(0,16);
          ajustarLinha();
          Anima();
  
          liGeral[0].addEventListener("click", function(){
           removeArticle();
-          ateOndeEuVou(0,38);
+          ateOndeEuVou(0,16);
           ajustarLinha();
           AddActive(0);
-
-          if(window.scrollY < 1200){
-            Anima();
-          } else if(window.scrollY < 3000) {
-            setTimeout(() => {
-              Anima();
-            }, 500);
-          } else {
-            setTimeout(() => {
-              Anima();
-            }, 700);
-          }
+          velocidadeAnima();
 
           });
         // });
         
         liGeral[1].addEventListener("click", function(){
           removeArticle();
-          ateOndeEuVou(39,77);
+          ateOndeEuVou(17,27);
           ajustarLinha();
           AddActive(1);
           velocidadeAnima();
@@ -198,7 +208,7 @@ document.addEventListener("scroll", function() {
         });        
         liGeral[2].addEventListener("click", function(){
           removeArticle();
-          ateOndeEuVou(78,116);
+          ateOndeEuVou(28,77);
           ajustarLinha();
           AddActive(2);
           velocidadeAnima();
@@ -206,7 +216,7 @@ document.addEventListener("scroll", function() {
         });        
         liGeral[3].addEventListener("click", function(){
           removeArticle();
-          ateOndeEuVou(117,155);
+          ateOndeEuVou(78,163);
           ajustarLinha();
           AddActive(3);
           velocidadeAnima();
@@ -214,7 +224,7 @@ document.addEventListener("scroll", function() {
         });        
         liGeral[4].addEventListener("click", function(){
           removeArticle();
-          ateOndeEuVou(156,190);
+          ateOndeEuVou(164,190);
           ajustarLinha();
           AddActive(4);
           velocidadeAnima();
@@ -240,20 +250,18 @@ document.addEventListener("scroll", function() {
         }
 
         function Anima(){
-            const elements = document.querySelectorAll('.timeline-content');
-            let n = 0;
-      
-            // Crie um observador de interseção
+            const elements = document.querySelectorAll('.timeline-content');  
+            //  
             const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                  // Adiciona a classe de animação quando o elemento está visível
-                  if(n%2==0){
-                  entry.target.classList.add('slideOut');
-                } else {
-                  entry.target.classList.add('slideIn');
-                }
-                  n++;
+                  if(entry.target.classList.length != 3){
+                    if(entry.target.getAttribute("data-id")%2==0){
+                      entry.target.classList.add("slideIn");
+                    } else {
+                      entry.target.classList.add("slideOut");
+                    }
+                  }
                 }
               });
             }, {
@@ -273,7 +281,7 @@ document.addEventListener("scroll", function() {
               console.log("500")
               Anima();
             }, 500);
-          } else if(window.scrollY > 3000) {
+          } else if(window.scrollY > 3000 && x < 15000) {
             setTimeout(() => {
               console.log("700")
               Anima();
@@ -282,7 +290,7 @@ document.addEventListener("scroll", function() {
             setTimeout(() => {
               console.log("1000000000")
               Anima();
-            }, 10000000);
+            }, 900);
           } else {
             console.log("se foi")
             Anima();
@@ -337,7 +345,3 @@ window.addEventListener("resize", ajustarLinha);
     // 
    // ===============================================================
   // 
-
-
-
-

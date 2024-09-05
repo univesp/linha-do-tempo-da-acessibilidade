@@ -8,6 +8,10 @@
 
 @media (max-width: 1200px) {
 
+    .content-img {
+        display: none;
+    }
+
     p{
         /* color: red; */
         /* font-size: 15pt; */
@@ -29,12 +33,13 @@
     .subtitle-deficiência {
         width: 100%;
         margin: 50px auto;
-        font-size: 14pt;
+        font-size: 13pt;
         border-bottom: 2px dashed black;
         text-align: center;
     }
 
     .cabeçalho {
+        height: auto;
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -46,16 +51,30 @@
     .logo-acessibilidade{
         display: flex;
         justify-content: center;
+        margin: 0;
+        flex-direction: column;
+        gap: 0;
     }
 
     .logo-acessibilidade img{
         width: 150px;
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 
     .content-title .title-deficiência{
         text-align: center;
         font-size: 30pt;
+    }
+
+    .content-title-p {
+        padding: 0 20px;
+        text-align: justify;
+        margin: 20px 0 35px 0;
+    }
+
+    .content-title-p.animate__animated.animate__backInUp {
+        border: 2px dashed;
+        padding: 12px 19px 0px;
     }
 
     .line,
