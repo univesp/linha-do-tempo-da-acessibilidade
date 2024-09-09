@@ -16,7 +16,7 @@ p{
 .cabeçalho{
   /* margin-top: 150px;
   margin-bottom: 200px; */
-  height: 93dvh;
+  height: 690px;
   width: 100%;
   overflow: hidden;
 }
@@ -299,7 +299,7 @@ main{
 
 .content-title-p {
   padding: 0 200px;
-  text-align: justify;
+  text-align: left;
 }
 
 

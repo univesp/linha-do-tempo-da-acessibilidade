@@ -22,70 +22,17 @@ $(document).ready(function(){
 
 var n = 1;
 
-// function Animacao(){
-//     for (let x = 1; x <= 191; x++) {
-//       if(section.children[n]){
-//         var rect = section.children[n].children[1].getBoundingClientRect();
-//         if (rect.y <= window.innerHeight) {
-//           n += 1;
-//           if(n % 2 == 0){
-//             section.children[n-1].children[1].classList.add("slideIn");
-//           } else {
-//             section.children[n-1].children[1].classList.add("slideOut");
-//           }
-//       }
-//       } else{
-//         console.log("não existe tambem '-'");
-//       }
-
-//   }
-// }
-
 function ajustarLinha() {
   const section = document.querySelector("section");
   const line = document.querySelector(".line");
   const posicaoSection = section.getBoundingClientRect();
   const alturaTotal = section.scrollHeight;
   line.style.height = `${alturaTotal}px`;
-  // line.style.top = `${posicaoSection.top + window.scrollY}px`;
 
 }
 
-// window.addEventListener('scroll', Animacao);
 document.addEventListener("scroll", function() {
 
-
-
-  // 
-  // 
-
-
-  //   window.addEventListener('scroll', function() {
-  //     // Verifica se o usuário rolou para baixo
-  //     if (window.scrollY > 0) {
-  //       if(section.children[n]){
-  //         console.log("isso existe")
-  //         var rect = section.children[n].children[1].getBoundingClientRect();
-  //         if (rect.y <= window.innerHeight) {
-  //           n += 1;
-  //           if(n % 2 == 0){
-  //             section.children[n-1].children[1].classList.add("slideIn");
-  //           } else {
-  //             section.children[n-1].children[1].classList.add("slideOut");
-  //           }
-  //       }
-  //       } else {
-  //         console.log("não existe :/")
-  //       }
-
-  //     }
-  // });
-  // 
-  /////////////////////////////////////////////
-  /////////////////////////////////////////////
-
-  /////////////////////////////////////////////
-  /////////////////////////////////////////////
 });
 
 
@@ -102,6 +49,14 @@ document.addEventListener("scroll", function() {
  // JSON 
  
  function displayData(obj){
+
+  let tamanhoTelaVertical = window.innerHeight;
+  console.log(tamanhoTelaVertical);
+
+  if(tamanhoTelaVertical < 735){
+    let pegaSeta = document.getElementsByClassName("content-img");
+    pegaSeta[0].remove();
+  }
    
  
    const ContentMain = document.getElementsByClassName("content-main")[0];
@@ -120,7 +75,7 @@ document.addEventListener("scroll", function() {
                  const DivLeft = createElements("div");
                  DivLeft.className = `white-${leftOrRigth(x)} timeline-content`;
                  // 
-                DivLeft.setAttribute('data-id', x);
+                 DivLeft.setAttribute('data-id', x);
                  //
                  const AgeLeft = createElements("div");
                  AgeLeft.className = `age-${leftOrRigth(x)}`;
@@ -135,14 +90,12 @@ document.addEventListener("scroll", function() {
                DivMarker.classList = "marker";
                DivMarker.innerText = "⧫";
                const Paragrafo = createElements("p");
-if(x == 189){
-  console.log("bazzzzinga")
-  Paragrafo.innerHTML = `Objetivos do Desenvolvimento Sustentável (<b><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a></b>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`;
-  console.log(`Objetivos do Desenvolvimento Sustentável (<a href="https://brasil.un.org/pt-br/sdgs" target="__blank>https://brasil.un.org/pt-br/sdgs</a>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`)
-  
-} else{
-  Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
-}
+
+                if(x == 189){
+                  Paragrafo.innerHTML = `Objetivos do Desenvolvimento Sustentável (<b><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a></b>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`;
+                } else{
+                  Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+                }
  
                // Adicionar elementos filhos ao DivLeft
                DivLeft.appendChild(AgeLeft);
@@ -295,11 +248,7 @@ if(x == 189){
             console.log("se foi")
             Anima();
           }
-        }
-
-
-         
- 
+        }     
  }
 
 ajustarLinha();
@@ -343,5 +292,5 @@ window.addEventListener("resize", ajustarLinha);
       });
     });
     // 
-   // ===============================================================
+   //
   // 
