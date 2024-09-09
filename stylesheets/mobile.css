@@ -6,6 +6,13 @@
     }
 }
 
+@media (max-height: 735px) {
+    .cabeçalho {
+        height: 690px;
+    }
+    
+}
+
 @media (max-width: 1200px) {
 
     .content-img {

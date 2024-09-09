@@ -16,7 +16,7 @@ p{
 .cabeçalho{
   /* margin-top: 150px;
   margin-bottom: 200px; */
-  height: 690px;
+  height: 96dvh;
   width: 100%;
   overflow: hidden;
 }
