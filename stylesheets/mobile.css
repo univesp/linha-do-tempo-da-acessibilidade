@@ -7,9 +7,6 @@
 }
 
 @media (max-height: 735px) {
-    .cabeçalho {
-        height: 690px;
-    }
     
 }
 
@@ -44,7 +41,9 @@
         border-bottom: 2px dashed black;
         text-align: center;
     }
-
+    .content-info .content-title-p{
+        font-size: 13pt;
+      }
     .cabeçalho {
         height: auto;
         justify-content: center;

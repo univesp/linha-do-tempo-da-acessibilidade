@@ -16,7 +16,7 @@ p{
 .cabeçalho{
   /* margin-top: 150px;
   margin-bottom: 200px; */
-  height: 96dvh;
+  /* height: 96dvh; */
   width: 100%;
   overflow: hidden;
 }
@@ -300,6 +300,8 @@ main{
 .content-title-p {
   padding: 0 200px;
   text-align: left;
+  
+  margin-bottom: 100px;
 }
 
 
@@ -370,6 +372,10 @@ main{
 .content-info{
   display: flex;
   justify-content: center;
+}
+
+.content-info .content-title-p{
+  font-size: 17pt;
 }
 
 .content-img{

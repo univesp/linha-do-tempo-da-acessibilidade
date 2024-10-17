@@ -53,10 +53,10 @@ document.addEventListener("scroll", function() {
   let tamanhoTelaVertical = window.innerHeight;
   console.log(tamanhoTelaVertical);
 
-  if(tamanhoTelaVertical < 735){
-    let pegaSeta = document.getElementsByClassName("content-img");
-    pegaSeta[0].remove();
-  }
+  // if(tamanhoTelaVertical < 735){
+  //   let pegaSeta = document.getElementsByClassName("content-img");
+  //   pegaSeta[0].remove();
+  // }
    
  
    const ContentMain = document.getElementsByClassName("content-main")[0];
