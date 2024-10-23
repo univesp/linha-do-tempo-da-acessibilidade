@@ -22,6 +22,10 @@ $(document).ready(function(){
 
 var n = 1;
 
+const browser = bowser.getParser(window.navigator.userAgent);
+const browserName = browser.getBrowser().name;
+const browserVersion = browser.getBrowser().version;
+
 function ajustarLinha() {
   const section = document.querySelector("section");
   const line = document.querySelector(".line");
@@ -74,6 +78,12 @@ document.addEventListener("scroll", function() {
                  // 
                  const DivLeft = createElements("div");
                  DivLeft.className = `white-${leftOrRigth(x)} timeline-content`;
+
+                 if(browserName == "Opera"){
+                  if(pegarNumerosAntesDoPonto(browserVersion) < 50){
+                    DivLeft.style = "opacity:1 !important;"
+                  }
+                }
                  // 
                  DivLeft.setAttribute('data-id', x);
                  //
@@ -95,6 +105,19 @@ document.addEventListener("scroll", function() {
                   Paragrafo.innerHTML = `Objetivos do Desenvolvimento Sustentável (<b><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a></b>): originada da Declaração de Incheon (2015), o documento da Unesco traz 17 objetivos que devem ser implementados até 2030. No 4º item, propõe como objetivo: assegurar a Educação Inclusiva, equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos.`;
                 } else{
                   Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+                }
+
+                if(x == 180){
+                  if(obj.texto[x].paragrafo[y].link){
+                    Paragrafo.classList = "ano2017";
+                    DivMarker.innerText = " ";
+                    Paragrafo.innerHTML= `<a href="${obj.texto[x].paragrafo[y].link}"target="_blank">${obj.texto[x].paragrafo[y].link}</a> `;
+
+                  }else{
+                    Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
+                  }
+
+
                 }
  
                // Adicionar elementos filhos ao DivLeft
@@ -294,3 +317,28 @@ window.addEventListener("resize", ajustarLinha);
     // 
    //
   // 
+
+
+  
+
+
+  console.log("O navegador usado é: " + browserName + " | versao: " + browserVersion);
+
+  if(browserName == "Opera"){
+    if(pegarNumerosAntesDoPonto(browserVersion) < 80){
+      let navLi = document.getElementById('nav')
+      navLi.children[0].children[0].style = "margin-bottom: 0;"
+      navLi.children[0].children[2].style = "margin-bottom: 0;"
+    }
+    if(pegarNumerosAntesDoPonto(browserVersion) < 48){
+
+    }
+  }
+
+
+  function pegarNumerosAntesDoPonto(texto) {
+    const resultado = texto.match(/(\d+)(?=\.)/);
+    return resultado ? resultado[0] : null;
+  }
+
+

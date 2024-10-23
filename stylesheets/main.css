@@ -227,7 +227,7 @@ footer{
 .slideIn{
   animation-name: slideIn;
   animation-duration: .75s;
-  animation-timing-function: cubic-bezier( 0.175, 0.885, 0.32, 1.275 ) ;
+  animation-timing-function: cubic-bezier(0, 0, 0.31, 1.01); ;
   /* animation-delay: .1s; */
   animation-fill-mode: forwards;
 }
@@ -235,7 +235,7 @@ footer{
 .slideOut{
   animation-name: slideOut;
   animation-duration: .75s;
-  animation-timing-function: cubic-bezier( 0.175, 0.885, 0.32, 1.275 ) ;
+  animation-timing-function: cubic-bezier(0, 0, 0.31, 1.01); ;
   /* animation-delay: .1s; */
   animation-fill-mode: forwards;
 }
@@ -305,9 +305,10 @@ main{
 }
 
 
-.nav-nav{
+.nav-nav {
   width: 95dvw;
   margin: auto;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -339,23 +340,32 @@ main{
 }
 
 
-.nav-li{
+
+.nav-li {
   min-width: 19%;
   height: 60px;
   margin-right: 1%;
-  background-color: #2d4710db;
+  background-color: #2d4710;
   padding: 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  backdrop-filter: blur(2px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
-.active{
+.active {
   background-color: #f2f2f2;
   color: #2d4710;
   font-weight: bolder;
-  box-shadow: 0 5px 6px -4px black, inset 0 6px 8px -3px #ffffff;;
+  -webkit-box-shadow: 0 5px 6px -4px black, inset 0 6px 8px -3px #ffffff;
+          box-shadow: 0 5px 6px -4px black, inset 0 6px 8px -3px #ffffff;
 }
 
 .nav-li p{
@@ -392,4 +402,9 @@ main{
 
 .modal {
   z-index: 105000;
+}
+
+.ano2017{
+  margin-top: -17px;
+  word-wrap: break-word;
 }
