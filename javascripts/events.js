@@ -111,15 +111,20 @@ document.addEventListener("scroll", function() {
                   if(obj.texto[x].paragrafo[y].link){
                     Paragrafo.classList = "ano2017";
                     DivMarker.innerText = " ";
-                    Paragrafo.innerHTML= `<a href="${obj.texto[x].paragrafo[y].link}"target="_blank">${obj.texto[x].paragrafo[y].link}</a> `;
+                    Paragrafo.innerHTML = `<a href="${obj.texto[x].paragrafo[y].link}"target="_blank">${obj.texto[x].paragrafo[y].link}</a> `;
 
                   }else{
                     Paragrafo.innerText = obj.texto[x].paragrafo[y].paragrafo;
                   }
-
-
+                }
+                
+                if(x == 17){
+                  if(y == 5){
+                    Paragrafo.innerHTML = `Em 1770, nasceu o famoso músico <a href="https://www.youtube.com/watch?v=3K6hLpTbwQo" target="_blank">Ludwig van Beethoven (1770-1827)</a>. Beethoven começou a sofrer com a surdez por volta de 1800. Seus primeiros sintomas se manifestaram quando ele tinha cerca de 30 anos de idade. No início, o compositor relatava que ouvia zumbidos e ruídos em seus ouvidos. Mais tarde, Beethoven passou a notar que, à distância, não conseguia ouvir as notas altas dos instrumentos ou as vozes dos cantores. Sua surdez não foi total até 1819. Apesar da surdez, Beethoven compôs algumas de suas obras mais importantes quando estava parcial ou totalmente surdo. Ele é considerado uma das figuras musicais mais influentes da história.`;
+                  }
                 }
  
+
                // Adicionar elementos filhos ao DivLeft
                DivLeft.appendChild(AgeLeft);
                DivLeft.appendChild(DivMarker);
